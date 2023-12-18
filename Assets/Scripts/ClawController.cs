@@ -20,7 +20,16 @@ public class ClawController : MonoBehaviour
                 move = false;
                 transform.localPosition = Vector3.zero;
             }
-        }        
+            if (move)
+            {
+                transform.position = touch.position;
+            }
+        }     
+        else
+        {
+            move = false;
+            transform.localPosition = Vector3.zero;
+        }
 
         //if (Input.GetMouseButtonDown(0) && colliderofthis.bounds.Contains(Input.mousePosition))
         //{
@@ -32,10 +41,6 @@ public class ClawController : MonoBehaviour
         //    transform.localPosition = Vector3.zero;
         //}
 
-        if(move)
-        {
-            transform.position = Input.mousePosition;
-        }
     }
 
 }
